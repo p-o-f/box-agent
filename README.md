@@ -2,8 +2,7 @@
 
 An autonomous AI agent that reads every contract in a Box folder, analyzes each one for legal and financial risk using Claude with API calls, and writes a structured risk report back to Box: no human in the loop.
 
-Built with the [Box Python SDK](https://github.com/box/box-python-sdk-gen) and [Anthropic Claude](https://www.anthropic.com).
----
+## Built with the [Box Python SDK](https://github.com/box/box-python-sdk-gen) and [Anthropic Claude](https://www.anthropic.com).
 
 ## What It Does
 
@@ -31,7 +30,8 @@ contracts/
 ```
 
 The agent produces a report like this:
-(1x run will cost approx. $0.24 of API credits) 
+(1x run will cost approx. $0.24 of API credits)
+
 ```
 ## Portfolio Summary
 
@@ -50,12 +50,12 @@ Each contract gets a detailed breakdown of flagged clauses with specific recomme
 
 ## Stack
 
-| Component | Tool |
-|-----------|------|
-| Content layer | [Box](https://box.com) — file storage, retrieval, and report delivery |
-| AI analysis | [Anthropic Claude](https://anthropic.com) — PDF understanding + legal reasoning |
-| Auth | Box OAuth 2.0 |
-| Language | Python 3.11+ |
+| Component     | Tool                                                                            |
+| ------------- | ------------------------------------------------------------------------------- |
+| Content layer | [Box](https://box.com) — file storage, retrieval, and report delivery           |
+| AI analysis   | [Anthropic Claude](https://anthropic.com) — PDF understanding + legal reasoning |
+| Auth          | Box OAuth 2.0                                                                   |
+| Language      | Python 3.11+                                                                    |
 
 ---
 
@@ -104,7 +104,9 @@ ANTHROPIC_API_KEY=your_anthropic_key_here
 
 ### 5. Upload contracts to Box
 
-Create a folder called `contracts` in your Box account and upload your PDF contracts. Then update the folder ID in `agent.py`:
+Create a folder called `contracts` in your Box account and upload your PDF contracts. Then update the folder ID variable in `agent.py`:
+Sample contracts are provided in `demo_contracts/` for testing.
+Upload them to a folder called `contracts` in your Box account.
 
 ```python
 CONTRACTS_FOLDER_ID = "your_folder_id_here"

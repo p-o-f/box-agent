@@ -218,7 +218,7 @@ def main():
     print("✅ Authenticated with Box\n")
 
     # Get files
-    items = client_files = box_client.folders.get_folder_items(CONTRACTS_FOLDER_ID)
+    items = box_client.folders.get_folder_items(CONTRACTS_FOLDER_ID)
     pdfs = [f for f in items.entries if f.name.endswith(".pdf")]
     print(f"📁 Found {len(pdfs)} contracts to review\n")
 
