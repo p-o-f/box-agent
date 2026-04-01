@@ -42,3 +42,9 @@ print("\n📁 Your Box root folders:")
 items = client.folders.get_folder_items("0")
 for item in items.entries:
     print(f"  [{item.type}] {item.name} (id: {item.id})")
+    
+# List contents of contracts folder
+print("\n📄 Files in contracts folder:")
+contract_items = client.folders.get_folder_items("374250469285")
+for item in contract_items.entries:
+    print(f"  [{item.type}] {item.name} (id: {item.id})")
